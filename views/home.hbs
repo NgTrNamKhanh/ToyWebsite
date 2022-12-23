@@ -1,0 +1,178 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content= "with=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+{{!-- 
+<?php
+        $categories = array(
+        array("CatId"=>1, "CatName"=>"iPhone"),
+        array("CatId"=>2, "CatName"=>"SamSung"),
+        array("CatId"=>3, "CatName"=>'Sony'),
+        array("CatId"=>4, "CatName"=>'Other')
+        );
+?> --}}
+    <section class="Marches">
+        <div class="text-box">
+            <h1>Marches WoodShell </h1>
+            <p>Cool designs with customizable features for any current smartphone from Apple, 
+                Samsung,<br> Sony, LG, HTC, Motorola and Nexus. </p>
+            <a href="/" class="btn">Visit for more</a>
+        </div>
+    </section>
+    <section class="iphone">
+        <div class="text-box-1">
+            <h1>iPhone 13 Collection</h1>
+            <p>Get your phone new jacket</p>
+            <a href="/" class="btn-1">Shop now</a>
+        </div>
+    </section>
+
+
+    <section class="samsung">
+        <div class="text-box-2">
+            <h1>Samsung S22 Collection</h1>
+            <p>A New Era</p>
+            <a href="/" class="btn-2">Explore now</a>
+        </div>
+    </section>
+
+    <section class ="reviews">
+        <h1>What Our Client Say</h1>
+        <p>We believe in the best experience for the customers</p>
+
+        <div class="row">
+                <div class="users-review">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="images/trananh.png" alt=""></a>
+                    <img src="images/stars.png" >
+                    <div>
+                        <p>
+                            Such a bad products! This thing barely stands the test of gravity. I dropped it from my hands and it immediately broke. 
+                            Not only that the battery inside made it exploded and dragged my phone along to hell? Not recommended. PLease find somewhere cheaper without damaging your phone. 
+                        </p>
+                        <h3>Tran Anh</h3>
+                    </div>
+                </div>
+
+                <div class="users-review">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="images/pengu.png" alt=""></a>
+                    <img src="images/stars.png" >
+                    <div>
+                        <p>
+                            I can't recommend this product as it is the worst purchase I've ever bought. They pay me too much money to give them a good review but I feel like I would sin if I do that.
+                            The truth is that I tried to dropped this case 5 meters and it barely stood. The worst part is that they overcharge this thing for $49.99 which I can find something way cheaper for half the price.
+                        </p>
+                        <h3>Pengu</h3>
+                    </div>
+                </div>
+
+                <div class="users-review">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="images/trananh.png" alt=""></a>
+                    <img src="images/stars.png" >
+                    <div>
+                        <p>
+                            Such a bad products! This thing barely stands the test of gravity. I dropped it from my hands and it immediately broke. 
+                            Not only that the battery inside made it exploded and dragged my phone along to hell? Not recommended. PLease find somewhere cheaper without damaging your phone. 
+                        </p>
+                        <h3>Tran Anh</h3>
+                    </div>
+                </div>
+
+        </div>
+    </section>
+<section id="footer" class="footer">
+        <div class="information">
+            <div class="info">
+                <p>INFO</p>
+                <ul>
+                    <li><a href="">Our Story</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="">Customer Reviews</a></li>
+                    <li><a href="">Covid-19</a></li>
+                </ul>
+            </div>
+            <div class="legal">
+                <p>LEGAL</p>
+                <ul>
+                    <li><a href="">Privacy</a></li>
+                    <li><a href="">Terms</a></li>
+                    <li><a href="">Patents</a></li>
+                    <li><a href="">Counterfeits</a></li>
+                </ul>
+            </div>
+            <div class="support">
+                <p>SUPPORT</p>
+                <ul>
+                    <li><a href="">Shipping</a> </li>
+                    <li><a href="">Return</a> </li>
+                    <li><a href="">FAQ</a> </li>
+                </ul>
+            </div>
+            <div class="others">
+                <p>OTHERS</p>
+                <ul>
+                    <li><a href="">My Account</a></li>
+                    <li><a href="">Tracking Order</a> </li>
+                    <li><a href="">Reward Program</a></li>
+                </ul>
+            </div>
+            <div class="contact">
+                <p>CONTACT</p>
+                <ul>
+                    <li><a href="">0971724696</a> </li>
+                    <li><a href="https://www.instagram.com/el_almas_/">Instagram</a> </li>
+                </ul>
+            </div>
+        </div>
+            <h2 class="copyright">©2022 Marches Special Woods, Inc. All Rights Reserved.</h2>
+    </section>
+<section class="header"> 
+    <nav class="nav">
+        <a href="/home"><img src="images/logo.png" alt=""></a>
+        <div class="nav-links">
+            <ul>
+                <li class="home"> <a href="/home">HOME</a></li>
+                <li> <a href="/product/allProducts">PRODUCTS</a></li>
+                {{#if user}}
+                    <li> <a href='/profile'>PROFILE</a></li>
+                    <li> <a href='/client/logout'>LOG OUT</a></li>
+                {{else}}
+                    <li> <a href='/client/login'>LOGIN</a></li>
+                {{/if}}
+                <li> <a href="/cart">CART</a></li>
+                <li> <a href="#footer">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+    {{!-- <?php
+    $categories = array(
+    array("CatId"=>1, "CatName"=>"Iphone"),
+    array("CatId"=>2, "CatName"=>"SamSung"),
+    array("CatId"=>3, "CatName"=>'Sony'),
+    array("CatId"=>4, "CatName"=>'Other')
+    );
+    ?>
+    <div class="products">
+        <ul class="products-links">
+        <?php 
+        foreach($categories as $cat){
+        ?>
+        
+            <li><a href="products-1.php?catid=<?=$cat['CatId']?>"><?=$cat["CatName"]?></a></li>
+        <?php
+        }
+        ?> --}}
+        </ul>
+        
+    </div>
+
+</section>
+</body>
+</html>
