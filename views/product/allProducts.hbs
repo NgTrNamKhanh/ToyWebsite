@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content= "with=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="Front2">
+        <div class="text-box">
+            <h1 style ="font-size:90px;">ATN</h1>
+            <p style ="font-size:30px;">Get your new toy</p>
+        </div>
+    </section>
+    <div style="padding-left: 20px;">
+        <form action="/product/search" method="post">
+            <input type="text" placeholder="Name to search" name="txtName" style="width: 200px;">
+            <input type="submit" value="Search" style="width: 70px;">
+        </form>
+        {{!-- {{#if user}} --}}
+        <div>
+            <a href="/product/add" class="btn-2">Add New Product</a>
+        </div>
+        {{!-- {{/if}} --}}
+    </div>
+    
+    <div class="section-group">
+        {{#each results}}
+            <div class="grid_1_of_4 images_1_of_4">
+                <a href=""><img src="{{picture}}" alt="" /></a>
+                <h2>{{productName}}</h2>
+                <div class="price-details">
+                    <div class="price-number">
+                        <p><span class="price">$ {{price}}</span></p>
+                    </div>
+                    {{!-- {{#if user}} --}}
+                        <div class="add-cart" style="padding-top: 10px;">								
+                            <a href="/product/edit?id={{_id}}" style="color: orange; font-size: 18px;">Edit</a>
+                            <a href="/product/delete?id={{_id}}" onclick="return confirm('are you mad?')" style="font-size: 18px;">Delete</a>
+                        </div>
+                    {{!-- {{/if}} --}}
+                </div>	
+            </div>	
+        {{/each}}			 
+    </div>
+    <section id="footer" class="footer" style="margin-top: 0;">
+        <div class="information">
+            <div class="info">
+                <p>INFO</p>
+                <ul>
+                    <li><a href="">Our Story</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="">Customer Reviews</a></li>
+                    <li><a href="">Covid-19</a></li>
+                </ul>
+            </div>
+            <div class="legal">
+                <p>LEGAL</p>
+                <ul>
+                    <li><a href="">Privacy</a></li>
+                    <li><a href="">Terms</a></li>
+                    <li><a href="">Patents</a></li>
+                    <li><a href="">Counterfeits</a></li>
+                </ul>
+            </div>
+            <div class="support">
+                <p>SUPPORT</p>
+                <ul>
+                    <li><a href="">Shipping</a> </li>
+                    <li><a href="">Return</a> </li>
+                    <li><a href="">FAQ</a> </li>
+                </ul>
+            </div>
+            <div class="others">
+                <p>OTHERS</p>
+                <ul>
+                    <li><a href="">My Account</a></li>
+                    <li><a href="">Tracking Order</a> </li>
+                    <li><a href="">Reward Program</a></li>
+                </ul>
+            </div>
+            <div class="contact">
+                <p>CONTACT</p>
+                <ul>
+                    <li><a href="">0971724696</a> </li>
+                    <li><a href="https://www.instagram.com/el_almas_/">Instagram</a> </li>
+                </ul>
+            </div>
+        </div>
+            <h2 class="copyright">©2022 Marches Special Woods, Inc. All Rights Reserved.</h2>
+    </section> 
+
+
+    <section class="header"> 
+        <nav class="nav">
+            <a href="/"><img src="/images/logo.png" alt=""></a>
+            <div class="nav-links">
+                <ul>
+                    <li class="home"> <a href="/">HOME</a></li>
+                    <li> <a href="/product/allProducts">PRODUCTS</a></li>
+                    {{#if user}}
+                        <li> <a href='/client/logout'>LOG OUT</a></li>
+                    {{else}}
+                        <li> <a href='/client/login'>LOGIN</a></li>
+                    {{/if}}
+                        <li> <a href="#footer">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+        {{!-- <?php
+        $categories = array(
+        array("CatId"=>1, "CatName"=>"Iphone"),
+        array("CatId"=>2, "CatName"=>"SamSung"),
+        array("CatId"=>3, "CatName"=>'Sony'),
+        array("CatId"=>4, "CatName"=>'Other')
+        );
+        ?>
+        <div class="products">
+            <ul class="products-links">
+            <?php 
+            foreach($categories as $cat){
+            ?>
+            
+                <li><a href="products-1.php?catid=<?=$cat['CatId']?>"><?=$cat["CatName"]?></a></li>
+            <?php
+            }
+            ?> --}}
+            {{!-- </ul>
+            
+        </div> --}}
+    </section>
+</body>
+
