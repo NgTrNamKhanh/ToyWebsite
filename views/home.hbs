@@ -19,28 +19,18 @@
         array("CatId"=>4, "CatName"=>'Other')
         );
 ?> --}}
-    <section class="Marches">
+    <section class="Front1">
         <div class="text-box">
-            <h1>Marches WoodShell </h1>
-            <p>Cool designs with customizable features for any current smartphone from Apple, 
-                Samsung,<br> Sony, LG, HTC, Motorola and Nexus. </p>
-            <a href="/" class="btn">Visit for more</a>
+            <h1>ATN</h1>
+            <p>The best toy store in Viet Nam</p>
+            <a href="/product/allProducts" class="btn">Visit for more</a>
         </div>
     </section>
-    <section class="iphone">
+    <section class="Front2">
         <div class="text-box-1">
-            <h1>iPhone 13 Collection</h1>
-            <p>Get your phone new jacket</p>
-            <a href="/" class="btn-1">Shop now</a>
-        </div>
-    </section>
-
-
-    <section class="samsung">
-        <div class="text-box-2">
-            <h1>Samsung S22 Collection</h1>
-            <p>A New Era</p>
-            <a href="/" class="btn-2">Explore now</a>
+            <h1>Dont't have an account?</h1>
+            <p>Sign up now</p>
+            <a href="/client/login" class="btn-1">Register</a>
         </div>
     </section>
 
@@ -50,8 +40,8 @@
 
         <div class="row">
                 <div class="users-review">
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="images/trananh.png" alt=""></a>
-                    <img src="images/stars.png" >
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/images/Khanh.jpg" alt=""></a>
+                    <img src="/images/stars.png" >
                     <div>
                         <p>
                             Such a bad products! This thing barely stands the test of gravity. I dropped it from my hands and it immediately broke. 
@@ -62,24 +52,24 @@
                 </div>
 
                 <div class="users-review">
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="images/pengu.png" alt=""></a>
-                    <img src="images/stars.png" >
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/images/Khanh.jpg" alt=""></a>
+                    <img src="/images/stars.png" >
                     <div>
                         <p>
                             I can't recommend this product as it is the worst purchase I've ever bought. They pay me too much money to give them a good review but I feel like I would sin if I do that.
-                            The truth is that I tried to dropped this case 5 meters and it barely stood. The worst part is that they overcharge this thing for $49.99 which I can find something way cheaper for half the price.
+                            The truth is that this toy barely stand after my son played for 2 days. The worst part is that they overcharge this thing for $49.99 which I can find something way cheaper for half the price.
                         </p>
                         <h3>Pengu</h3>
                     </div>
                 </div>
 
                 <div class="users-review">
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="images/trananh.png" alt=""></a>
-                    <img src="images/stars.png" >
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="/images/Khanh.jpg" alt=""></a>
+                    <img src="/images/stars.png" >
                     <div>
                         <p>
                             Such a bad products! This thing barely stands the test of gravity. I dropped it from my hands and it immediately broke. 
-                            Not only that the battery inside made it exploded and dragged my phone along to hell? Not recommended. PLease find somewhere cheaper without damaging your phone. 
+                            Not only that the battery inside made it exploded but also the terible plastic smell that it gave? Not recommended. PLease find somewhere cheaper without hurting your kid. 
                         </p>
                         <h3>Tran Anh</h3>
                     </div>
@@ -135,19 +125,17 @@
     </section>
 <section class="header"> 
     <nav class="nav">
-        <a href="/home"><img src="images/logo.png" alt=""></a>
+        <a href="/"><img src="/images/logo.png" alt=""></a>
         <div class="nav-links">
             <ul>
-                <li class="home"> <a href="/home">HOME</a></li>
+                <li class="home"> <a href="/">HOME</a></li>
                 <li> <a href="/product/allProducts">PRODUCTS</a></li>
                 {{#if user}}
-                    <li> <a href='/profile'>PROFILE</a></li>
                     <li> <a href='/client/logout'>LOG OUT</a></li>
                 {{else}}
                     <li> <a href='/client/login'>LOGIN</a></li>
                 {{/if}}
-                <li> <a href="/cart">CART</a></li>
-                <li> <a href="#footer">CONTACT</a></li>
+                    <li> <a href="#footer">CONTACT</a></li>
             </ul>
         </div>
     </nav>

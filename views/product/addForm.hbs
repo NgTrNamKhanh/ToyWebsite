@@ -15,10 +15,10 @@
             <p style ="font-size:30px;">Get your phone new jacket</p>
         </div>
     </section> --}}
-    <div class="Marches" style="position: static;">
+    <div class="Front1" style="position: static;">
         <div class="form-container">
             <div class="form-btn">
-                <span>Add Form</span>
+                <span style="font-size: 30px;">Add Form</span>
             </div>
             <form action="/product/add" method="post">
                 <input type="text" class="bar" name="productName" id="" placeholder="ProductName">
@@ -78,19 +78,17 @@
 
     <section class="header"> 
         <nav class="nav">
-            <a href="/home"><img src="images/logo.png" alt=""></a>
+            <a href="/"><img src="/images/logo.png" alt=""></a>
             <div class="nav-links">
                 <ul>
                     <li class="home"> <a href="/">HOME</a></li>
                     <li> <a href="/product/allProducts">PRODUCTS</a></li>
                     {{#if user}}
-                        <li> <a href='/client/profile'>PROFILE</a></li>
                         <li> <a href='/client/logout'>LOG OUT</a></li>
                     {{else}}
                         <li> <a href='../client/login'>LOGIN</a></li>
                     {{/if}}
-                    <li> <a href="/cart">CART</a></li>
-                    <li> <a href="#footer">CONTACT</a></li>
+                        <li> <a href="#footer">CONTACT</a></li>
                 </ul>
             </div>
         </nav>

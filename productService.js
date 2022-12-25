@@ -2,23 +2,23 @@ var express = require('express')
 var app = express()
 
 const bodyParser = require("body-parser");
-const sessions = require('express-session')
+// const sessions = require('express-session')
 
-var MongoClient = require('mongodb').MongoClient
-var url = 'mongodb://0.0.0.0:27017'
+// var MongoClient = require('mongodb').MongoClient
+// var url = 'mongodb://0.0.0.0:27017'
 
 var router = express.Router()
 const { insertNewProduct, getAllProduct, updateProduct, findProductById, deleteProductById, findProductByName} = require('./productDatabaseHandler.js')
 
 
 app.use(bodyParser.urlencoded({ extended:true }));
-const oneDay = 1000*60*60*24;
-router.use(sessions({
-    secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
-    saveUninitialized:false,
-    cookie: { maxAge: oneDay },
-    resave: false
-}));
+// const oneDay = 1000*60*60*24;
+// router.use(sessions({
+//     secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
+//     saveUninitialized:false,
+//     cookie: { maxAge: oneDay },
+//     resave: false
+// }));
 
 router.get('/add',(req,res)=>{
     if(req.session){

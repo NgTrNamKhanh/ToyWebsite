@@ -9,21 +9,24 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="Marches">
+    <section class="Front2">
         <div class="text-box">
-            <h1 style ="font-size:90px;">Marches WoodShell</h1>
-            <p style ="font-size:30px;">Get your phone new jacket</p>
+            <h1 style ="font-size:90px;">ATN</h1>
+            <p style ="font-size:30px;">Get your new toy</p>
         </div>
     </section>
-    <div class="">
+    <div style="padding-left: 20px;">
         <form action="/product/search" method="post">
-            <input type="text" placeholder="Name to search" name="txtName">
-            <input type="submit" value="Search">
+            <input type="text" placeholder="Name to search" name="txtName" style="width: 200px;">
+            <input type="submit" value="Search" style="width: 70px;">
         </form>
+        {{!-- {{#if user}} --}}
+        <div>
+            <a href="/product/add" class="btn-2">Add New Product</a>
+        </div>
+        {{!-- {{/if}} --}}
     </div>
-    <div>
-        <button><a href="/product/add">Add New Product</a></button>
-    </div>
+    
     <div class="section-group">
         {{#each results}}
             <div class="grid_1_of_4 images_1_of_4">
@@ -33,11 +36,12 @@
                     <div class="price-number">
                         <p><span class="price">$ {{price}}</span></p>
                     </div>
-                        <div class="add-cart">								
-                            <a href="/product/edit?id={{_id}}" style="color: orange;">Edit</a>
-                            <a href="/product/delete?id={{_id}}" onclick="return confirm('are you mad?')">Delete</a>
+                    {{!-- {{#if user}} --}}
+                        <div class="add-cart" style="padding-top: 10px;">								
+                            <a href="/product/edit?id={{_id}}" style="color: orange; font-size: 18px;">Edit</a>
+                            <a href="/product/delete?id={{_id}}" onclick="return confirm('are you mad?')" style="font-size: 18px;">Delete</a>
                         </div>
-                            <div class="clear"></div>
+                    {{!-- {{/if}} --}}
                 </div>	
             </div>	
         {{/each}}			 
@@ -92,19 +96,17 @@
 
     <section class="header"> 
         <nav class="nav">
-            <a href="/home"><img src="images/logo.png" alt=""></a>
+            <a href="/"><img src="/images/logo.png" alt=""></a>
             <div class="nav-links">
                 <ul>
                     <li class="home"> <a href="/">HOME</a></li>
                     <li> <a href="/product/allProducts">PRODUCTS</a></li>
                     {{#if user}}
-                        <li> <a href='/profile'>PROFILE</a></li>
                         <li> <a href='/client/logout'>LOG OUT</a></li>
                     {{else}}
                         <li> <a href='/client/login'>LOGIN</a></li>
                     {{/if}}
-                    <li> <a href="/cart">CART</a></li>
-                    <li> <a href="#footer">CONTACT</a></li>
+                        <li> <a href="#footer">CONTACT</a></li>
                 </ul>
             </div>
         </nav>
