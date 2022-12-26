@@ -233,7 +233,6 @@ nav img{
     padding: 12px 34px;
     font-size: 13px;
     background: rgb(0, 0, 0);
-    position: relative;
     cursor: pointer;
 }
 .btn-2:hover{

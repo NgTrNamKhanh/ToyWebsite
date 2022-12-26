@@ -5,8 +5,7 @@ const {MongoClient,ObjectId} = require('mongodb')
 const DATABASE_URL="mongodb+srv://ElAlmas:namkhanh2510@cluster0.kk1lwoe.mongodb.net/test"
 const DATABASE_NAME='ElAlmas'
 async function checkLogin(username,password){
-    let client = await MongoClient.connect(DATABASE_URL)
-    let db = client.db("CloudComputing")
+    let db = await getDB()
     const result = await db.collection("Clients").
                     findOne({$and: [{username:username},{password:password}]})
     console.log(result)
