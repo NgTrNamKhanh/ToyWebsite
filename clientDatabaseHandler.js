@@ -1,9 +1,7 @@
-// var mongoClient = require('mongodb').MongoClient
-// var url = 'mongodb://0.0.0.0:27017'
-// const { ObjectId } = require('bson')
 const {MongoClient,ObjectId} = require('mongodb')
 const DATABASE_URL="mongodb+srv://ElAlmas:namkhanh2510@cluster0.kk1lwoe.mongodb.net/test"
-const DATABASE_NAME='ElAlmas'
+
+
 async function checkLogin(username,password){
     let db = await getDB()
     const result = await db.collection("Clients").

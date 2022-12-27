@@ -1,6 +1,5 @@
 const {MongoClient,ObjectId} = require('mongodb')
 const DATABASE_URL="mongodb+srv://ElAlmas:namkhanh2510@cluster0.kk1lwoe.mongodb.net/test"
-const DATABASE_NAME='ElAlmas'
 
 async function insertNewProduct(newProducts) {
     let db = await getDB()

@@ -122,7 +122,7 @@
                 <li class="home"> <a href="/">HOME</a></li>
                 <li> <a href="/product/allProducts">PRODUCTS</a></li>
                 {{#if user}}
-                    <li> <a href='/client/logout'>LOG OUT</a></li>
+                    <li> <a href='/client/logout' onclick="return confirm('are you sure?')" >LOG OUT</a></li>
                 {{else}}
                     <li> <a href='/client/login'>LOGIN</a></li>
                 {{/if}}
