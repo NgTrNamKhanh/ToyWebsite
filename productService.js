@@ -65,9 +65,11 @@ router.post('/add',async(req,res)=>{
     const productName = req.body.productName
     const price = req.body.price
     const picture = req.body.picture
+    const quantity = req.body.quantity
     const newProduct = {
         productName :productName,
         price: price,
+        quantity : quantity,
         picture: picture
     }
     await insertNewProduct(newProduct)
@@ -77,8 +79,9 @@ router.post('/edit',async(req,res)=>{
     const id = req.body.id
     const productName = req.body.productName
     const price = req.body.price
+    const quantity = req.body.quantity
     const picture = req.body.picture
-    await updateProduct(id,productName,price,picture)
+    await updateProduct(id,productName,price,picture, quantity)
     res.redirect('/product/allProducts')
 })
 router.post('/search',async (req,res)=>{

@@ -16,10 +16,10 @@ async function getAllProduct() {
     let results = await db.collection("Products").find().toArray()
     return results
 }   
-async function updateProduct(id, productName, price, picture) {
+async function updateProduct(id, productName, price, picture, quantity) {
     let db = await getDB()
     await db.collection("Products").updateOne({ _id: ObjectId(id)},
-        { $set: { "productName": productName, "price": price, "picture": picture } })
+        { $set: { "productName": productName, "price": price, "picture": picture , "quantity": quantity} })
 }
 async function findProductById(id) {
     let db = await getDB()

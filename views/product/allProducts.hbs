@@ -41,6 +41,7 @@
                                 <a href="/product/edit?id={{_id}}" style="color: orange; font-size: 18px;">Edit</a>
                                 <a href="/product/delete?id={{_id}}" onclick="return confirm('are you mad?')" style="font-size: 18px;">Delete</a>
                             </div>
+                        <p><span class ="price">Quantity: {{quantity}}</span></p>
                     </div>	
                 </div>	
             {{/each}}	
@@ -54,6 +55,7 @@
                             <p><span class="price">$ {{price}}</span></p>
                         </div>
                     </div>	
+                    <p><span class ="price">Quantity: {{quantity}}</span></p>
                 </div>	
             {{/each}}
         {{/if}}
@@ -123,27 +125,6 @@
                 </ul>
             </div>
         </nav>
-        {{!-- <?php
-        $categories = array(
-        array("CatId"=>1, "CatName"=>"Iphone"),
-        array("CatId"=>2, "CatName"=>"SamSung"),
-        array("CatId"=>3, "CatName"=>'Sony'),
-        array("CatId"=>4, "CatName"=>'Other')
-        );
-        ?>
-        <div class="products">
-            <ul class="products-links">
-            <?php 
-            foreach($categories as $cat){
-            ?>
-            
-                <li><a href="products-1.php?catid=<?=$cat['CatId']?>"><?=$cat["CatName"]?></a></li>
-            <?php
-            }
-            ?> --}}
-            {{!-- </ul>
-            
-        </div> --}}
     </section>
 </body>
 
