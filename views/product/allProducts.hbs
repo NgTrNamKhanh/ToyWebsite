@@ -35,7 +35,7 @@
                     <h2>{{productName}}</h2>
                     <div class="price-details">
                         <div class="price-number">
-                            <p><span class="price">$ {{price}}</span></p>
+                            <p><span class="price" style="color: {{price}} ;">$ {{price}}</span></p>
                         </div>
                             <div class="add-cart" style="padding-top: 10px;">								
                                 <a href="/product/edit?id={{_id}}" style="color: orange; font-size: 18px;">Edit</a>
@@ -52,7 +52,7 @@
                     <h2>{{productName}}</h2>
                     <div class="price-details">
                         <div class="price-number">
-                            <p><span class="price">$ {{price}}</span></p>
+                            <p><span class="price" style="color: {{price}} ;">$ {{price}}</span></p>
                         </div>
                     </div>	
                     <p><span class ="price">Quantity: {{quantity}}</span></p>
@@ -127,4 +127,10 @@
         </nav>
     </section>
 </body>
+<script>
+    var colorMatch = {
+    '0-100'     : 'green',
+    '100-1000'    : 'red'
+ }
+</script>
 

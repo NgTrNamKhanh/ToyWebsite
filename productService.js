@@ -66,14 +66,24 @@ router.post('/add',async(req,res)=>{
     const price = req.body.price
     const picture = req.body.picture
     const quantity = req.body.quantity
-    const newProduct = {
-        productName :productName,
-        price: price,
-        quantity : quantity,
-        picture: picture
+    if(productName.length< 5){
+        res.render('product/addForm',{'notice':"Not enough length"})
+    }else if (price<10 || price >1000){
+        res.render('product/addForm',{'notice':"Invalid price"})
+    }else if(quantity<10 || quantity >1000){
+        res.render('product/addForm',{'notice':"Invalid quantity"})
+    }else if (picture.length ==0){
+        res.render('product/addForm',{'notice':"Invalid picture"})
+    }else{
+        const newProduct = {
+            productName :productName,
+            price: price,
+            quantity : quantity,
+            picture: picture
+        }
+        await insertNewProduct(newProduct)
+        res.redirect('/product/allProducts')
     }
-    await insertNewProduct(newProduct)
-    res.redirect('/product/allProducts')
 })
 router.post('/edit',async(req,res)=>{
     const id = req.body.id
@@ -81,8 +91,18 @@ router.post('/edit',async(req,res)=>{
     const price = req.body.price
     const quantity = req.body.quantity
     const picture = req.body.picture
-    await updateProduct(id,productName,price,picture, quantity)
-    res.redirect('/product/allProducts')
+    if(productName.length< 5){
+        res.render('product/addForm',{'notice':"Not enough length"})
+    }else if (price<10 || price >1000){
+        res.render('product/addForm',{'notice':"Invalid price"})
+    }else if(quantity<10 || quantity >1000){
+        res.render('product/addForm',{'notice':"Invalid quantity"})
+    }else if (picture.length ==0){
+        res.render('product/addForm',{'notice':"Invalid picture"})
+    }else{
+        await updateProduct(id,productName,price,picture, quantity)
+        res.redirect('/product/allProducts')
+    }
 })
 router.post('/search',async (req,res)=>{
     const searchName = req.body.txtName
