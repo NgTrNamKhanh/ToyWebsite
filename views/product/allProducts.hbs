@@ -22,29 +22,42 @@
         </form>
         {{#if user}}
             <div>
-                <a href="/product/add" class="btn-2">Add New Product</a>
+                <a href="/product/add" class="btn-3">Add New Product</a>
             </div>
         {{/if}}
     </div>
     
     <div class="section-group">
-        {{#each results}}
-            <div class="grid_1_of_4 images_1_of_4">
-                <a href=""><img src="{{picture}}" alt="" /></a>
-                <h2>{{productName}}</h2>
-                <div class="price-details">
-                    <div class="price-number">
-                        <p><span class="price">$ {{price}}</span></p>
-                    </div>
-                    {{#if user}}
-                        <div class="add-cart" style="padding-top: 10px;">								
-                            <a href="/product/edit?id={{_id}}" style="color: orange; font-size: 18px;">Edit</a>
-                            <a href="/product/delete?id={{_id}}" onclick="return confirm('are you mad?')" style="font-size: 18px;">Delete</a>
+        {{#if user}}
+            {{#each results}}
+                <div class="grid_1_of_4 images_1_of_4">
+                    <a href=""><img src="{{picture}}" alt="" /></a>
+                    <h2>{{productName}}</h2>
+                    <div class="price-details">
+                        <div class="price-number">
+                            <p><span class="price">$ {{price}}</span></p>
                         </div>
-                    {{/if}}
+                            <div class="add-cart" style="padding-top: 10px;">								
+                                <a href="/product/edit?id={{_id}}" style="color: orange; font-size: 18px;">Edit</a>
+                                <a href="/product/delete?id={{_id}}" onclick="return confirm('are you mad?')" style="font-size: 18px;">Delete</a>
+                            </div>
+                    </div>	
                 </div>	
-            </div>	
-        {{/each}}			 
+            {{/each}}	
+        {{else}}
+            {{#each results}}
+                <div class="grid_1_of_4 images_1_of_4">
+                    <a href=""><img src="{{picture}}" alt="" /></a>
+                    <h2>{{productName}}</h2>
+                    <div class="price-details">
+                        <div class="price-number">
+                            <p><span class="price">$ {{price}}</span></p>
+                        </div>
+                    </div>	
+                </div>	
+            {{/each}}
+        {{/if}}
+
     </div>
     <section id="footer" class="footer" style="margin-top: 0;">
         <div class="information">
