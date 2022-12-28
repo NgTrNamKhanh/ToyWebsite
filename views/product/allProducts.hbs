@@ -36,8 +36,7 @@
                     <h2>{{productName}}</h2>
                     <div class="price-details">
                         <div class="price-number" >
-                            <p><span class="price" style="color: getColor({{price}})">$ {{price}}</span></p>
-                            
+                            <p><span class="price" style="color: {{priceCheck price}}">$ {{price}}</span></p>
                         </div>
                             <div class="add-cart" style="padding-top: 10px;">								
                                 <a href="/product/edit?id={{_id}}" style="color: orange; font-size: 18px;">Edit</a>
@@ -54,7 +53,7 @@
                     <h2>{{productName}}</h2>
                     <div class="price-details">
                         <div class="price-number" >
-                            <p><span class="price" style="color: getColor({{price}})">$ {{price}}</span></p>
+                            <p><span class="price" style="color: {{priceCheck price}}">$ {{price}}</span></p>
                            
                         </div>
                     </div>	
@@ -129,16 +128,6 @@
             </div>
         </nav>
     </section>  
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript">
-        function getColor(data){
-            if(data > 100){
-                return "red";
-            }else{
-                return "green";
-            }
-        } 
-    </script>
 </body>
 </html>
 

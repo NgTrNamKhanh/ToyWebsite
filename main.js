@@ -6,6 +6,15 @@ app.set('view engine','hbs')
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'))
 
+const hbs = require('hbs')
+hbs.registerHelper('priceCheck',function(price){
+    if(price >= 50){
+        return 'red'
+    }else{
+        return 'green'
+    }
+})
+
 const oneDay = 1000*60*60*24;
 app.use(sessions({
     secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",

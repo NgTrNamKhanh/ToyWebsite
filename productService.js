@@ -67,7 +67,7 @@ router.post('/add',async(req,res)=>{
     const picture = req.body.picture
     const quantity = req.body.quantity
     if(productName.length< 5){
-        res.render('product/addForm',{'notice':"Not enough length"})
+        res.render('product/addForm',{'notice':"Not enough length for name"})
     }else if (price<10 || price >1000){
         res.render('product/addForm',{'notice':"Invalid price"})
     }else if(quantity<10 || quantity >1000){
@@ -92,7 +92,7 @@ router.post('/edit',async(req,res)=>{
     const quantity = req.body.quantity
     const picture = req.body.picture
     if(productName.length< 5){
-        res.render('product/addForm',{'notice':"Not enough length"})
+        res.render('product/addForm',{'notice':"Not enough length for name"})
     }else if (price<10 || price >1000){
         res.render('product/addForm',{'notice':"Invalid price"})
     }else if(quantity<10 || quantity >1000){
