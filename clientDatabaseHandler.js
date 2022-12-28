@@ -23,7 +23,7 @@ async function getAllClient() {
     let db = await getDB()
     let results = await db.collection("Clients").find().toArray()
     return results
-}
+}   
 async function updateClient(username, email, password) {
     let db = await getDB()
     await db.collection("Clients").updateOne({ _id: ObjectId(id) },

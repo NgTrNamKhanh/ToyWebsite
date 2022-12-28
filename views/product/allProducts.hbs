@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <section class="Front2">
@@ -34,8 +35,9 @@
                     <a href=""><img src="{{picture}}" alt="" /></a>
                     <h2>{{productName}}</h2>
                     <div class="price-details">
-                        <div class="price-number">
-                            <p><span class="price" style="color: {{price}} ;">$ {{price}}</span></p>
+                        <div class="price-number" >
+                            <p><span class="price" style="color: getColor({{price}})">$ {{price}}</span></p>
+                            
                         </div>
                             <div class="add-cart" style="padding-top: 10px;">								
                                 <a href="/product/edit?id={{_id}}" style="color: orange; font-size: 18px;">Edit</a>
@@ -51,8 +53,9 @@
                     <a href=""><img src="{{picture}}" alt="" /></a>
                     <h2>{{productName}}</h2>
                     <div class="price-details">
-                        <div class="price-number">
-                            <p><span class="price" style="color: {{price}} ;">$ {{price}}</span></p>
+                        <div class="price-number" >
+                            <p><span class="price" style="color: getColor({{price}})">$ {{price}}</span></p>
+                           
                         </div>
                     </div>	
                     <p><span class ="price">Quantity: {{quantity}}</span></p>
@@ -125,12 +128,18 @@
                 </ul>
             </div>
         </nav>
-    </section>
+    </section>  
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript">
+        function getColor(data){
+            if(data > 100){
+                return "red";
+            }else{
+                return "green";
+            }
+        } 
+    </script>
 </body>
-<script>
-    var colorMatch = {
-    '0-100'     : 'green',
-    '100-1000'    : 'red'
- }
-</script>
+</html>
+
 
