@@ -15,13 +15,13 @@
                 <span style="font-size: 30px;">Add Form</span>
             </div>
             <form action="/product/add" method="post">
-                <input type="text" class="bar" name="productName" id="" placeholder="ProductName">
-                <input type="number" class="bar" name="price" id="" placeholder="Price">
-                <input type="number" class="bar" name="quantity" id="" placeholder="Quantity">
-                <input type="text" class="bar" name="picture" id="" placeholder="PicURL">
+                <input type="text" class="bar" name="productName" id="name" placeholder="ProductName">
+                <input type="number" class="bar" name="price" id="price" placeholder="Price">
+                <input type="number" class="bar" name="quantity" id="quantity" placeholder="Quantity">
+                <input type="text" class="bar" name="picture" id="picture" placeholder="PicURL">
                 <input type="submit" name="checking" class="btn-2" style="width:260px"></input>
             </form>
-            <p class="notice">{{notice}}</p>
+            <p class="notice" id="notice" >{{notice}}</p>
         </div>
     </div>
     <section id="footer" class="footer" style="margin-top: 0;">
@@ -89,5 +89,36 @@
             </div>
         </nav>
     </section>
+    <script>
+            function deletenotice(){
+                const warning = document.getElementById("notice");
+                warning.innerHTML = "";
+            }
+            function validateData(){
+                const name = document.getElementById("name");
+                const price = document.getElementById("price");
+                const picture = document.getElementById("picture");
+                const quantity = document.getElementById("quantity");
+                name.addEventListener('invalid', function (event) {
+                if (event.target.validity.valueMissing) {
+                    event.target.setCustomValidity('Please tell us how we should address you.');
+                }
+                })
+                name.addEventListener('change', function (event) {
+                event.target.setCustomValidity('');
+                })
+                if(name.length < 5){
+                    document.getElementById("notice").innerHTML = "Not enough length for name"
+                }else if (price<10 || price >1000){
+                    document.getElementById("notice").innerHTML = "Invalid price"
+                }else if(quantity<10 || quantity >1000){
+                    document.getElementById("notice").innerHTML = "invalid quantity"
+                }else if (picture.length ==0){
+                    document.getElementById("notice").innerHTML = "No picture"
+                }else{
+                    
+                }
+            }
+        </script>
 </body>
-
+</html>

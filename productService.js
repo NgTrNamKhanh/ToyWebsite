@@ -91,14 +91,15 @@ router.post('/edit',async(req,res)=>{
     const price = req.body.price
     const quantity = req.body.quantity
     const picture = req.body.picture
-    if(productName.length< 5){
-        res.render('product/addForm',{'notice':"Not enough length for name"})
+    const editProduct = await findProductById(id)
+    if(productName.length< 5){ 
+        res.render('product/editForm', {'product': editProduct ,'notice':"Not enough length for name"})
     }else if (price<10 || price >1000){
-        res.render('product/addForm',{'notice':"Invalid price"})
+        res.render('product/editForm',{'product': editProduct ,'notice':"Invalid price"})
     }else if(quantity<10 || quantity >1000){
-        res.render('product/addForm',{'notice':"Invalid quantity"})
+        res.render('product/editForm',{'product': editProduct ,'notice':"Invalid quantity"})
     }else if (picture.length ==0){
-        res.render('product/addForm',{'notice':"Invalid picture"})
+        res.render('product/editForm',{'product': editProduct ,'notice':"Invalid picture"})
     }else{
         await updateProduct(id,productName,price,picture, quantity)
         res.redirect('/product/allProducts')
